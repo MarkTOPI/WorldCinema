@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.worldcinema.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/compilationFragment"
+        android:name="com.example.worldcinema.compilationFragment"
+        android:label="fragment_compilation"
+        tools:layout="@layout/fragment_compilation" />
+    <fragment
+        android:id="@+id/collectionFragment"
+        android:name="com.example.worldcinema.collectionFragment"
+        android:label="fragment_collection"
+        tools:layout="@layout/fragment_collection" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.worldcinema.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
