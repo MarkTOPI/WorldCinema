@@ -3,17 +3,17 @@
     <item
         android:id="@+id/mainFragment"
         android:icon="@drawable/main"
-        android:title="Главная" />
+        android:title="Main" />
     <item
         android:id="@+id/compilationFragment"
         android:icon="@drawable/compilation"
-        android:title="Подборка" />
+        android:title="Compilation" />
     <item
         android:id="@+id/collectionFragment"
         android:icon="@drawable/collection"
-        android:title="Коллекции" />
+        android:title="Collection" />
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/profile"
-        android:title="Профиль" />
+        android:title="Profile" />
 </menu>

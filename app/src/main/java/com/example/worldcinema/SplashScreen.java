@@ -8,7 +8,7 @@ import android.os.Handler;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private final int splashscreen = 2000;
+    private final int timeout = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,6 @@ public class SplashScreen extends AppCompatActivity {
                 SplashScreen.this.startActivity(intent);
                 SplashScreen.this.finish();
             }
-        }, splashscreen);
+        }, timeout);
     }
 }
