@@ -1,10 +1,13 @@
-package com.example.worldcinema;
+package com.example.worldcinema.splashScreen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.worldcinema.MainActivity;
+import com.example.worldcinema.R;
 
 public class SplashScreen extends AppCompatActivity {
 

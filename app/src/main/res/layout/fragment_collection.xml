@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
-    tools:context=".collectionFragment"
+    tools:context=".buttonBottomNavigation.collection.collectionFragment"
     android:padding="16dp">
 
     <LinearLayout
@@ -45,9 +45,8 @@
                     android:layout_height="49dp"
                     android:layout_gravity="end|center"
                     android:background="#000"
-                    android:src="@drawable/ic_baseline_colorize_24"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:onClick="newCollection"/>
+                    android:src="@drawable/ic_baseline_add_24"
+                    tools:ignore="SpeakableTextPresentCheck"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -58,6 +57,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/linearFavorite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">

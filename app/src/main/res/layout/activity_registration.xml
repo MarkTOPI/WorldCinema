@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:paddingLeft="16sp"
     android:paddingRight="16sp"
-    tools:context=".Registration">
+    tools:context=".registration.Registration">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,6 +64,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edit_text_rectangle"
                 android:hint="Имя"
+                android:textColor="@color/white"
                 android:textColorHint="#AFAFAF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -81,6 +82,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edit_text_rectangle"
                 android:hint="Фамилия"
+                android:textColor="@color/white"
                 android:textColorHint="#AFAFAF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -98,6 +100,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edit_text_rectangle"
                 android:hint="E-mail"
+                android:textColor="@color/white"
                 android:textColorHint="#AFAFAF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -115,6 +118,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edit_text_rectangle"
                 android:hint="Пароль"
+                android:textColor="@color/white"
                 android:textColorHint="#AFAFAF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -132,6 +136,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edit_text_rectangle"
                 android:hint="Повторите пароль"
+                android:textColor="@color/white"
                 android:textColorHint="#AFAFAF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -151,7 +156,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/buttonAuth"
+                android:id="@+id/buttonRegistration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_rectangle"
@@ -168,7 +173,7 @@
             android:layout_marginTop="16sp">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonRegistration"
+                android:id="@+id/buttonAuth"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"

@@ -1,8 +1,10 @@
-package com.example.worldcinema;
+package com.example.worldcinema.newCollection;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.worldcinema.R;
 
 public class newCollections extends AppCompatActivity {
 

@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.worldcinema.MainFragment"
+        android:name="com.example.worldcinema.buttonBottomNavigation.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/compilationFragment"
-        android:name="com.example.worldcinema.compilationFragment"
+        android:name="com.example.worldcinema.buttonBottomNavigation.compilation.compilationFragment"
         android:label="fragment_compilation"
         tools:layout="@layout/fragment_compilation" />
     <fragment
         android:id="@+id/collectionFragment"
-        android:name="com.example.worldcinema.collectionFragment"
+        android:name="com.example.worldcinema.buttonBottomNavigation.collection.collectionFragment"
         android:label="fragment_collection"
         tools:layout="@layout/fragment_collection" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.worldcinema.ProfileFragment"
+        android:name="com.example.worldcinema.buttonBottomNavigation.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

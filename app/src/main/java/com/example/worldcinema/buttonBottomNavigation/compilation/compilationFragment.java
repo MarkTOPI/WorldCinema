@@ -1,6 +1,5 @@
-package com.example.worldcinema;
+package com.example.worldcinema.buttonBottomNavigation.compilation;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.worldcinema.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link collectionFragment#newInstance} factory method to
+ * Use the {@link compilationFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class collectionFragment extends Fragment {
+public class compilationFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +26,7 @@ public class collectionFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public collectionFragment() {
+    public compilationFragment() {
         // Required empty public constructor
     }
 
@@ -35,11 +36,11 @@ public class collectionFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment collectionFragment.
+     * @return A new instance of fragment compilationFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static collectionFragment newInstance(String param1, String param2) {
-        collectionFragment fragment = new collectionFragment();
+    public static compilationFragment newInstance(String param1, String param2) {
+        compilationFragment fragment = new compilationFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,6 +61,6 @@ public class collectionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_collection, container, false);
+        return inflater.inflate(R.layout.fragment_compilation, container, false);
     }
 }

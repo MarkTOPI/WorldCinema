@@ -1,4 +1,4 @@
-package com.example.worldcinema;
+package com.example.worldcinema.feed;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -7,6 +7,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 
+import com.example.worldcinema.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Feed extends AppCompatActivity {
