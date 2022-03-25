@@ -1,66 +1,90 @@
 package com.example.worldcinema.buttonBottomNavigation.profile;
 
+import android.content.Context;
+import android.content.Intent;
+import android.nfc.Tag;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.worldcinema.MainActivity;
 import com.example.worldcinema.R;
+import com.example.worldcinema.network.ProfileHandler;
+import com.example.worldcinema.network.models.UserInfoResponse;
+import com.example.worldcinema.network.service.ApiProfileService;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+
 public class ProfileFragment extends Fragment {
+    private SharedPreferences sharedPreferences;
+    private String TAG = "Привет!";
+    private String token;
+    private Button button;
+    ApiProfileService service = ProfileHandler.getInstance().getProfileService();
+    TextView txtFirstName, txtLastName, txtEmail;
+    ImageView imgAvatar;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public ProfileFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ProfileFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ProfileFragment newInstance(String param1, String param2) {
         ProfileFragment fragment = new ProfileFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        sharedPreferences = getContext().getSharedPreferences("token", Context.MODE_PRIVATE);
+        token = sharedPreferences.getString("token", "");
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        txtFirstName = view.findViewById(R.id.userNameText);
+        txtLastName = view.findViewById(R.id.userLastNameText);
+        txtEmail = view.findViewById(R.id.userEmailText);
+        view.findViewById(R.id.buttonExit).setOnClickListener(v -> {
+            sharedPreferences= getContext().getSharedPreferences("token",Context.MODE_PRIVATE);
+            sharedPreferences.edit().remove("token").commit();
+            startActivity(new Intent(getContext(), MainActivity.class));
+        });
+        AsyncTask.execute(() -> {
+            service.getData(token).enqueue(new Callback<List<UserInfoResponse>>() {
+                @Override
+                public void onResponse(Call<List<UserInfoResponse>> call, Response<List<UserInfoResponse>> response) {
+                    txtFirstName.setText(response.body().get(0).getFirstName());
+                    txtLastName.setText(response.body().get(0).getLastName());
+                    txtEmail.setText(response.body().get(0).getEmail());
+                }
+
+                @Override
+                public void onFailure(Call<List<UserInfoResponse>> call, Throwable t) {
+                    Log.d(TAG, "onFailure: Что-то пошло не так");
+                }
+            });
+        });
+
+        return view;
     }
 }

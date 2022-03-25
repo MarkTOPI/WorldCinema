@@ -109,8 +109,7 @@
                 android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textColor="@color/white"
-                android:text="Войти"
-                android:onClick="goFeed"/>
+                android:text="Войти"/>
         </LinearLayout>
 
         <LinearLayout
