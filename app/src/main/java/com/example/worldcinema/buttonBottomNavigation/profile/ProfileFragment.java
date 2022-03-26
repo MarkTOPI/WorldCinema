@@ -34,7 +34,6 @@ public class ProfileFragment extends Fragment {
     private SharedPreferences sharedPreferences;
     private String TAG = "Привет!";
     private String token;
-    private Button button;
     ApiProfileService service = ProfileHandler.getInstance().getProfileService();
     TextView txtFirstName, txtLastName, txtEmail;
     ImageView imgAvatar;
