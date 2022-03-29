@@ -1,11 +1,15 @@
 package com.example.worldcinema.network.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.worldcinema.ChatActivity;
 import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
@@ -21,6 +25,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     private ArrayList<MovieResponse> movieResponses;
     private LayoutInflater inflater;
     private Context context;
+    private LinearLayout linearLayout;
 
     public MovieAdapter(ArrayList<MovieResponse> movieResponse, Context context) {
         this.movieResponses = movieResponse;
@@ -33,6 +38,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     public MovieAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
         View view = inflater.inflate(R.layout.cover_item, parent, false);
+        view.findViewById(R.id.linerGoToChat);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context, ChatActivity.class));
+            }
+        });
         return new ViewHolder(view);
     }
 

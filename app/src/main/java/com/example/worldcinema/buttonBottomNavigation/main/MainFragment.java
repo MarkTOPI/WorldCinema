@@ -1,5 +1,6 @@
 package com.example.worldcinema.buttonBottomNavigation.main;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.worldcinema.ChatActivity;
 import com.example.worldcinema.R;
 import com.example.worldcinema.network.ErrorUtils;
 import com.example.worldcinema.network.MovieHandler;

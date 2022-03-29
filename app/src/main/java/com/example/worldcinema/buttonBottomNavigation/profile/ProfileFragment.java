@@ -2,7 +2,6 @@ package com.example.worldcinema.buttonBottomNavigation.profile;
 
 import android.content.Context;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -13,10 +12,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.worldcinema.discussions.DiscussionsActivity;
 import com.example.worldcinema.MainActivity;
 import com.example.worldcinema.R;
 import com.example.worldcinema.network.ProfileHandler;
@@ -36,7 +34,6 @@ public class ProfileFragment extends Fragment {
     private String token;
     ApiProfileService service = ProfileHandler.getInstance().getProfileService();
     TextView txtFirstName, txtLastName, txtEmail;
-    ImageView imgAvatar;
 
 
     public ProfileFragment() {
@@ -63,6 +60,9 @@ public class ProfileFragment extends Fragment {
         txtFirstName = view.findViewById(R.id.userNameText);
         txtLastName = view.findViewById(R.id.userLastNameText);
         txtEmail = view.findViewById(R.id.userEmailText);
+        view.findViewById(R.id.discussions).setOnClickListener(v -> {
+            startActivity(new Intent(getContext(), DiscussionsActivity.class));
+        });
         view.findViewById(R.id.buttonExit).setOnClickListener(v -> {
             sharedPreferences= getContext().getSharedPreferences("token",Context.MODE_PRIVATE);
             sharedPreferences.edit().remove("token").commit();
